@@ -10,96 +10,111 @@ import SceneKit
 import QuartzCore
 
 class GameViewController: NSViewController {
-    
+    var convertedScene = SCNScene()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // create and add a camera to the scene
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        scene.rootNode.addChildNode(cameraNode)
-        
-        // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
-        
-        // create and add a light to the scene
-        let lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light!.type = .omni
-        lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
-        scene.rootNode.addChildNode(lightNode)
-        
-        // create and add an ambient light to the scene
-        let ambientLightNode = SCNNode()
-        ambientLightNode.light = SCNLight()
-        ambientLightNode.light!.type = .ambient
-        ambientLightNode.light!.color = NSColor.darkGray
-        scene.rootNode.addChildNode(ambientLightNode)
-        
-        // retrieve the ship node
-        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
-        
-        // animate the 3d object
-        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
-        
-        // retrieve the SCNView
+
+        let scene = SCNScene()
+
+        let ambientLight = SCNLight()
+        ambientLight.color = NSColor.white
+        ambientLight.type = SCNLight.LightType.ambient
+        scene.rootNode.light = ambientLight;
+
+        let sphereGeometry = SCNSphere(radius: 1.5)
+        let sphereMaterial = SCNMaterial()
+        sphereMaterial.diffuse.contents =  NSColor.white
+        sphereGeometry.materials = [sphereMaterial]
+        let sphere = SCNNode(geometry: sphereGeometry)
+
+        scene.rootNode.addChildNode(sphere)
+
         let scnView = self.view as! SCNView
-        
-        // set the scene to the view
         scnView.scene = scene
-        
-        // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
-        
-        // show statistics such as fps and timing information
-        scnView.showsStatistics = true
-        
-        // configure the view
+        scnView.allowsCameraControl = false
+        scnView.showsStatistics = false
         scnView.backgroundColor = NSColor.black
-        
+
         // Add a click gesture recognizer
         let clickGesture = NSClickGestureRecognizer(target: self, action: #selector(handleClick(_:)))
         var gestureRecognizers = scnView.gestureRecognizers
         gestureRecognizers.insert(clickGesture, at: 0)
         scnView.gestureRecognizers = gestureRecognizers
     }
-    
+
+    func showFileLoader()
+    {
+        let dialog = NSOpenPanel();
+
+        dialog.title                   = "Choose a .ply file";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.canChooseDirectories    = false;
+        dialog.canCreateDirectories    = true;
+        dialog.allowsMultipleSelection = false;
+        dialog.allowedFileTypes        = ["ply"];
+
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.url
+
+            if (result != nil) {
+                let path = result!.path
+                convertCloud(path: path)
+            }
+        } else {
+            return
+        }
+    }
+
     @objc
     func handleClick(_ gestureRecognizer: NSGestureRecognizer) {
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
-        
-        // check what nodes are clicked
-        let p = gestureRecognizer.location(in: scnView)
-        let hitResults = scnView.hitTest(p, options: [:])
-        // check that we clicked on at least one object
-        if hitResults.count > 0 {
-            // retrieved the first clicked object
-            let result = hitResults[0]
-            
-            // get its material
-            let material = result.node.geometry!.firstMaterial!
-            
-            // highlight it
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = 0.5
-            
-            // on completion - unhighlight
-            SCNTransaction.completionBlock = {
-                SCNTransaction.begin()
-                SCNTransaction.animationDuration = 0.5
-                
-                material.emission.contents = NSColor.black
-                
-                SCNTransaction.commit()
+        showFileLoader()
+    }
+
+    func showFileSaver()
+    {
+        let dialog = NSSavePanel();
+
+        dialog.title                   = "Choose a location to save the converted scene";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.canCreateDirectories    = true;
+        dialog.allowedFileTypes        = ["scn"];
+
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            let result = dialog.url
+
+            if (result != nil) {
+                let path = result!.path
+                saveConvertedScene(path: path)
             }
-            
-            material.emission.contents = NSColor.red
-            
-            SCNTransaction.commit()
+        } else {
+            return
         }
+    }
+
+    func saveConvertedScene(path: String){
+        print("storing scene...")
+        // save model
+        let success = convertedScene.write(to: URL.init(fileURLWithPath:path), options: nil, delegate: nil) { (totalProgress, error, stop) in
+            print("Progress \(totalProgress) Error: \(String(describing: error))")
+        }
+        print("Success: \(success)")
+    }
+
+    func convertCloud(path: String) {
+        convertedScene = SCNScene()
+
+        print("loading cloud...")
+
+        let pointcloud = PointCloud()
+        pointcloud.load(file: path)
+        let cloud = pointcloud.getNode(useColor: true)
+        convertedScene.rootNode.addChildNode(cloud)
+
+        print("loaded!")
+
+        showFileSaver()
     }
 }

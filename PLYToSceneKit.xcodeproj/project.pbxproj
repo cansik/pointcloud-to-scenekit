@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE7A60ACF45C190DCD617739 /* PointCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A67B872480924AD20A31A /* PointCloud.swift */; };
 		AE7A64B342E53072F8302670 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A62F854B4A8A0C78555A3 /* GameViewController.swift */; };
 		AE7A64C009C4340A18019DC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A62D89CEE47AD120810CC /* AppDelegate.swift */; };
 		AE7A6B667FCA3A32BBEA4FFB /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7A62CE328904F3999F6F13 /* art.scnassets */; };
 		AE7A6D656DA4850CFC16D99D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7A6923801CDEA8B7E9FD18 /* Main.storyboard */; };
+		AE7A6D6EC0D6D7F907787EF2 /* PointCloudVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A656C7D0ADBB702C735C8 /* PointCloudVertex.swift */; };
+		AE7A6DC9A1704438F31D5500 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A6C8B2FE79C89333D13F3 /* Utils.swift */; };
+		AE7A6E3C514F33AEF6BE5D51 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A6EADC672A78A9D85CB9D /* Event.swift */; };
 		AE7A6F80C7E4295DE1181673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7A6100DDED4D71AD1AD432 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +26,11 @@
 		AE7A62D89CEE47AD120810CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7A62E30532641003ED81E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE7A62F854B4A8A0C78555A3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AE7A656C7D0ADBB702C735C8 /* PointCloudVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointCloudVertex.swift; sourceTree = "<group>"; };
+		AE7A67B872480924AD20A31A /* PointCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointCloud.swift; sourceTree = "<group>"; };
 		AE7A69AE95695E0203440DA8 /* PLYToSceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLYToSceneKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE7A6C8B2FE79C89333D13F3 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		AE7A6EADC672A78A9D85CB9D /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,10 @@
 				AE7A6923801CDEA8B7E9FD18 /* Main.storyboard */,
 				AE7A62CE328904F3999F6F13 /* art.scnassets */,
 				AE7A62F854B4A8A0C78555A3 /* GameViewController.swift */,
+				AE7A67B872480924AD20A31A /* PointCloud.swift */,
+				AE7A6C8B2FE79C89333D13F3 /* Utils.swift */,
+				AE7A656C7D0ADBB702C735C8 /* PointCloudVertex.swift */,
+				AE7A6EADC672A78A9D85CB9D /* Event.swift */,
 			);
 			path = PLYToSceneKit;
 			sourceTree = "<group>";
@@ -93,6 +105,15 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = bildspur;
+				TargetAttributes = {
+					AE7A659556329B3FD231B0D6 = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = AE7A68F5424242F21F265FE0 /* Build configuration list for PBXProject "PLYToSceneKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -131,6 +152,10 @@
 			files = (
 				AE7A64C009C4340A18019DC1 /* AppDelegate.swift in Sources */,
 				AE7A64B342E53072F8302670 /* GameViewController.swift in Sources */,
+				AE7A60ACF45C190DCD617739 /* PointCloud.swift in Sources */,
+				AE7A6DC9A1704438F31D5500 /* Utils.swift in Sources */,
+				AE7A6D6EC0D6D7F907787EF2 /* PointCloudVertex.swift in Sources */,
+				AE7A6E3C514F33AEF6BE5D51 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +297,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -301,6 +325,7 @@
 				AE7A6FC8CA403720F87BEC30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE7A68F5424242F21F265FE0 /* Build configuration list for PBXProject "PLYToSceneKit" */ = {
 			isa = XCConfigurationList;
