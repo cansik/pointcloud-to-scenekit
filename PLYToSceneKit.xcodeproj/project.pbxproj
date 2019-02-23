@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE7A64B342E53072F8302670 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A62F854B4A8A0C78555A3 /* GameViewController.swift */; };
+		AE7A64C009C4340A18019DC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7A62D89CEE47AD120810CC /* AppDelegate.swift */; };
+		AE7A6B667FCA3A32BBEA4FFB /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7A62CE328904F3999F6F13 /* art.scnassets */; };
+		AE7A6D656DA4850CFC16D99D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7A6923801CDEA8B7E9FD18 /* Main.storyboard */; };
+		AE7A6F80C7E4295DE1181673 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7A6100DDED4D71AD1AD432 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE7A604A4079344B9143CE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		AE7A6100DDED4D71AD1AD432 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE7A627A816323A72536D224 /* PLYToSceneKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PLYToSceneKit.entitlements; sourceTree = "<group>"; };
+		AE7A62CE328904F3999F6F13 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = art.scnassets; sourceTree = "<group>"; };
+		AE7A62D89CEE47AD120810CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE7A62E30532641003ED81E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE7A62F854B4A8A0C78555A3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AE7A69AE95695E0203440DA8 /* PLYToSceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLYToSceneKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE7A6A633F69AD6FB6904812 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE7A62424691F8DF93441B88 = {
+			isa = PBXGroup;
+			children = (
+				AE7A6594063257B45BA94787 /* Products */,
+				AE7A65F36BCD76A73CFC0AA3 /* PLYToSceneKit */,
+			);
+			sourceTree = "<group>";
+		};
+		AE7A6594063257B45BA94787 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE7A69AE95695E0203440DA8 /* PLYToSceneKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE7A65F36BCD76A73CFC0AA3 /* PLYToSceneKit */ = {
+			isa = PBXGroup;
+			children = (
+				AE7A604A4079344B9143CE9F /* Info.plist */,
+				AE7A6100DDED4D71AD1AD432 /* Assets.xcassets */,
+				AE7A627A816323A72536D224 /* PLYToSceneKit.entitlements */,
+				AE7A62D89CEE47AD120810CC /* AppDelegate.swift */,
+				AE7A6923801CDEA8B7E9FD18 /* Main.storyboard */,
+				AE7A62CE328904F3999F6F13 /* art.scnassets */,
+				AE7A62F854B4A8A0C78555A3 /* GameViewController.swift */,
+			);
+			path = PLYToSceneKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE7A659556329B3FD231B0D6 /* PLYToSceneKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE7A64166CF804F8DBAA3F5A /* Build configuration list for PBXNativeTarget "PLYToSceneKit" */;
+			buildPhases = (
+				AE7A6DD56ACD3CB1D51E6D8D /* Sources */,
+				AE7A6A633F69AD6FB6904812 /* Frameworks */,
+				AE7A6C3EFAD36B17CA198069 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PLYToSceneKit;
+			productName = PLYToSceneKit;
+			productReference = AE7A69AE95695E0203440DA8 /* PLYToSceneKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE7A660DA65B3CBD93D65E7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = bildspur;
+			};
+			buildConfigurationList = AE7A68F5424242F21F265FE0 /* Build configuration list for PBXProject "PLYToSceneKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE7A62424691F8DF93441B88;
+			productRefGroup = AE7A6594063257B45BA94787 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE7A659556329B3FD231B0D6 /* PLYToSceneKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE7A6C3EFAD36B17CA198069 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE7A6F80C7E4295DE1181673 /* Assets.xcassets in Resources */,
+				AE7A6D656DA4850CFC16D99D /* Main.storyboard in Resources */,
+				AE7A6B667FCA3A32BBEA4FFB /* art.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE7A6DD56ACD3CB1D51E6D8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE7A64C009C4340A18019DC1 /* AppDelegate.swift in Sources */,
+				AE7A64B342E53072F8302670 /* GameViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AE7A6923801CDEA8B7E9FD18 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE7A62E30532641003ED81E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE7A63D4988E6082E1840950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE7A6675806D872260FFACCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PLYToSceneKit/PLYToSceneKit.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PLYToSceneKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.bildspur.PLYToSceneKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		AE7A66E13E3EA122C68886B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AE7A6FC8CA403720F87BEC30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PLYToSceneKit/PLYToSceneKit.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PLYToSceneKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ch.bildspur.PLYToSceneKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE7A64166CF804F8DBAA3F5A /* Build configuration list for PBXNativeTarget "PLYToSceneKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE7A6675806D872260FFACCF /* Debug */,
+				AE7A6FC8CA403720F87BEC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AE7A68F5424242F21F265FE0 /* Build configuration list for PBXProject "PLYToSceneKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE7A63D4988E6082E1840950 /* Debug */,
+				AE7A66E13E3EA122C68886B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE7A660DA65B3CBD93D65E7E /* Project object */;
+}
