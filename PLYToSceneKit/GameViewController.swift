@@ -6,14 +6,31 @@
 //  Copyright © 2019 bildspur. All rights reserved.
 //
 
+import SpriteKit
 import SceneKit
 import QuartzCore
 
 class GameViewController: NSViewController {
     var convertedScene = SCNScene()
 
+    let infoLabel = SKLabelNode()
+
+    var message : String = "" {
+        didSet {
+            infoLabel.text = "Status: \(message)"
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let scnView = self.view as! SCNView
+
+        let hud = SKScene(size: self.view.frame.size)
+        infoLabel.horizontalAlignmentMode = .left
+        infoLabel.color = NSColor.blue
+        infoLabel.text = "Click Me!"
+        infoLabel.position = CGPoint(x: 20, y: 20)
+        hud.addChild(infoLabel)
 
         let scene = SCNScene()
 
@@ -30,7 +47,7 @@ class GameViewController: NSViewController {
 
         scene.rootNode.addChildNode(sphere)
 
-        let scnView = self.view as! SCNView
+        scnView.overlaySKScene = hud
         scnView.scene = scene
         scnView.allowsCameraControl = false
         scnView.showsStatistics = false
@@ -99,6 +116,7 @@ class GameViewController: NSViewController {
         // save model
         let success = convertedScene.write(to: URL.init(fileURLWithPath:path), options: nil, delegate: nil) { (totalProgress, error, stop) in
             print("Progress \(totalProgress) Error: \(String(describing: error))")
+            self.message = "saving... \(totalProgress)%"
         }
         print("Success: \(success)")
     }
