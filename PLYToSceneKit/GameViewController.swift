@@ -28,7 +28,9 @@ class GameViewController: NSViewController {
         let hud = SKScene(size: self.view.frame.size)
         infoLabel.horizontalAlignmentMode = .left
         infoLabel.color = NSColor.blue
-        infoLabel.text = "Click Me!"
+        infoLabel.text = "Status"
+        infoLabel.fontSize = 14.0;
+        infoLabel.fontColor = NSColor.green
         infoLabel.position = CGPoint(x: 20, y: 20)
         hud.addChild(infoLabel)
 
@@ -39,7 +41,7 @@ class GameViewController: NSViewController {
         ambientLight.type = SCNLight.LightType.ambient
         scene.rootNode.light = ambientLight;
 
-        let sphereGeometry = SCNSphere(radius: 1.5)
+        let sphereGeometry = SCNSphere(radius: 0.5)
         let sphereMaterial = SCNMaterial()
         sphereMaterial.diffuse.contents =  NSColor.white
         sphereGeometry.materials = [sphereMaterial]
@@ -126,13 +128,25 @@ class GameViewController: NSViewController {
 
         print("loading cloud...")
 
-        let pointcloud = PointCloud()
-        pointcloud.load(file: path)
-        let cloud = pointcloud.getNode(useColor: true)
-        convertedScene.rootNode.addChildNode(cloud)
+        DispatchQueue.global(qos: .background).async {
+            let pointcloud = PointCloud()
 
-        print("loaded!")
+            pointcloud.progressEvent.addHandler { progress in
+                DispatchQueue.main.async {
+                    self.message = "loading... \(Int(progress * 100))%"
+                }
+            }
 
-        showFileSaver()
+            pointcloud.load(file: path)
+            let cloud = pointcloud.getNode(useColor: true)
+            cloud.name = "cloud"
+            self.convertedScene.rootNode.addChildNode(cloud)
+
+            print("loaded!")
+
+            DispatchQueue.main.async {
+                self.showFileSaver()
+            }
+        }
     }
 }
