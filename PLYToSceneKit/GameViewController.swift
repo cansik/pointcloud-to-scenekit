@@ -26,28 +26,15 @@ class GameViewController: NSViewController {
         let scnView = self.view as! SCNView
 
         let hud = SKScene(size: self.view.frame.size)
-        infoLabel.horizontalAlignmentMode = .left
-        infoLabel.color = NSColor.blue
+        infoLabel.horizontalAlignmentMode = .center
         infoLabel.text = "Status"
-        infoLabel.fontSize = 14.0;
+        infoLabel.fontName = "Avenir-Black"
+        infoLabel.fontSize = 20.0;
         infoLabel.fontColor = NSColor.green
-        infoLabel.position = CGPoint(x: 20, y: 20)
+        infoLabel.position = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
         hud.addChild(infoLabel)
 
         let scene = SCNScene()
-
-        let ambientLight = SCNLight()
-        ambientLight.color = NSColor.white
-        ambientLight.type = SCNLight.LightType.ambient
-        scene.rootNode.light = ambientLight;
-
-        let sphereGeometry = SCNSphere(radius: 0.5)
-        let sphereMaterial = SCNMaterial()
-        sphereMaterial.diffuse.contents =  NSColor.white
-        sphereGeometry.materials = [sphereMaterial]
-        let sphere = SCNNode(geometry: sphereGeometry)
-
-        scene.rootNode.addChildNode(sphere)
 
         scnView.overlaySKScene = hud
         scnView.scene = scene
@@ -118,7 +105,7 @@ class GameViewController: NSViewController {
         // save model
         let success = convertedScene.write(to: URL.init(fileURLWithPath:path), options: nil, delegate: nil) { (totalProgress, error, stop) in
             print("Progress \(totalProgress) Error: \(String(describing: error))")
-            self.message = "saving... \(totalProgress)%"
+            self.message = "saving... \(Int(totalProgress * 100))%"
         }
         print("Success: \(success)")
     }
@@ -145,7 +132,11 @@ class GameViewController: NSViewController {
             print("loaded!")
 
             DispatchQueue.main.async {
-                self.showFileSaver()
+                let url = URL(fileURLWithPath: path)
+                let output = url.deletingPathExtension().appendingPathExtension(".scn")
+                
+                self.saveConvertedScene(path: output.path)
+                //self.showFileSaver()
             }
         }
     }
