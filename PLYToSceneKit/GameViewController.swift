@@ -133,7 +133,7 @@ class GameViewController: NSViewController {
 
             DispatchQueue.main.async {
                 let url = URL(fileURLWithPath: path)
-                let output = url.deletingPathExtension().appendingPathExtension(".scn")
+                let output = url.deletingPathExtension().appendingPathExtension("scn")
                 
                 self.saveConvertedScene(path: output.path)
                 //self.showFileSaver()
