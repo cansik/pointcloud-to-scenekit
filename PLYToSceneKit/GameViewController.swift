@@ -120,7 +120,7 @@ class GameViewController: NSViewController {
 
             pointcloud.progressEvent.addHandler { progress in
                 DispatchQueue.main.async {
-                    self.message = "loading... \(Int(progress * 100))%"
+                    self.message = "converting... \(Int(progress * 100))%"
                 }
             }
 
@@ -134,9 +134,19 @@ class GameViewController: NSViewController {
             DispatchQueue.main.async {
                 let url = URL(fileURLWithPath: path)
                 let output = url.deletingPathExtension().appendingPathExtension("scn")
+                let usdzOutput = url.deletingPathExtension().appendingPathExtension("usdz")
                 
+                print("storing scn...")
                 self.saveConvertedScene(path: output.path)
+            
+                /*
+                print("storing usdz...")
+                let scnView = self.view as! SCNView
+                scnView.scene?.write(to: usdzOutput, options: nil, delegate: nil, progressHandler: nil)
                 //self.showFileSaver()
+                 */
+                
+                print("done!")
             }
         }
     }
